@@ -1,0 +1,1 @@
+web: gunicorn nysc_etche.wsgi
