@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NYSC Etche LGA -- Rivers State</title>
+
+    <script src="../../cdn-cgi/apps/head/OkbNSnEV_PNHTKP2_EYPrFNyZ8Q.js"></script>
+    <link href="{% static 'hom/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'hom/css/church.css' %}" rel="stylesheet">
+    <link href="{% static 'hom/css/fancybox.css' %}" rel="stylesheet">
+
+    <link rel="shortcut icon" href="{% static 'hom/images/nysc.png' %}">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700" rel='stylesheet' type='text/css'>
+    <!-- Font Icon -->
+    <!-- <link rel="stylesheet" href="{% static 'reg/fonts/material-icon/css/material-design-iconic-font.min.css' %}"> -->
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'reg/css/style.css' %}">
+</head>
+
+<body>
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="{% url 'home' %}">HOME</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="highlight-bg has-margin-bottom">
+        <div class="signup-content">
+            <div class="signup-img space">
+                <img src="{% static 'hom/images/p1.jpg' %}" alt="">
+            </div>
+            <div class="signup-form">
+                <form method="POST" action="" class="register-form" id="register-form">
+                    {% csrf_token %}
+                    <h2>Details  Form</h2>
+                    <div class="form-group">
+                        {{ form.as_p }}
+                    </div>
+                     <div class="form-submit">
+                        <!-- <input type="submit" value="Reset All" class="submit" name="reset" id="reset" /> -->
+                        <button type="submit" class="submit" name="submit" id="submit">Submit Form</button>
+                        <!-- <input type="submit" value="Submit Form" class="submit" name="submit" id="submit" /> -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="main"> 
+    </div> -->
+
+    <!-- JS -->
+    <script src="{% static 'reg/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'reg/js/main.js' %}"></script>
+    <script src="{% static 'hom/js/jquery.js' %}"></script>
+    <script src="{% static 'hom/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'hom/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'hom/js/ketchup.all.js' %}"></script>
+    <script src="{% static 'hom/js/fancybox.js' %}"></script>
+    <script src="{% static 'hom/js/script.js' %}"></script>
+</body>
+
+</html>
