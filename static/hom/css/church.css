@@ -394,11 +394,11 @@ h6 {
   top: 55%;
 }
 .slide-one {
-  background: url(../images/church-mountain-bg.jpg) no-repeat;
+  background: url(../images/bg1.jpg) no-repeat;
   background-size: cover;
 }
 .slide-two {
-  background: url(../images/church-man-sea.jpg) no-repeat;
+  background: url(../images/bg2.jpg) no-repeat;
   background-size: cover;
 }
 /* .slide-three {
