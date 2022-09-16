@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NYSC Etche LGA -- Rivers State</title>
+
+    <script src="../../cdn-cgi/apps/head/OkbNSnEV_PNHTKP2_EYPrFNyZ8Q.js"></script>
+    <link href="{% static 'hom/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'hom/css/church.css' %}" rel="stylesheet">
+    <link href="{% static 'hom/css/fancybox.css' %}" rel="stylesheet">
+
+    <link rel="shortcut icon" href="{% static 'hom/images/nysc.png' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link href="{% static 'img/favicon.ico' %}" rel='shortcut icon'>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700" rel='stylesheet' type='text/css'>
+    <!-- Font Icon -->
+    <!-- <link rel="stylesheet" href="{% static 'reg/fonts/material-icon/css/material-design-iconic-font.min.css' %}"> -->
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'reg/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'reg/css/success.css' %}">
+
+</head>
+
+<body>
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span
+                        class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+                        class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="{% url 'home' %}">HOME</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="highlight-bg has-margin-bottom">
+        <div class="signup-content">
+            <div class="signup-img space">
+                <img src="{% static 'hom/images/p1.jpg' %}" alt="">
+            </div>
+            <div class="signup-form">
+                <form method="POST" action="" class="register-form" id="register-form">
+                    {% csrf_token %}
+                    <h2>Details Form</h2>
+                    <div class="form-group">
+                        {{ form.as_p }}
+                    </div>
+                    <div class="form-submit">
+                        <!-- <input type="submit" value="Reset All" class="submit" name="reset" id="reset" /> -->
+                        <button name="submit" id="submit" type="button" class="btn btn-primary submit"
+                            data-toggle="modal" data-target="#submitModal">Submit Form</button>
+                        <!-- <input type="submit" value="Submit Form" class="submit" name="submit" id="submit" /> -->
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="submitModal" tabindex="-1" role="dialog"
+                        aria-labelledby="submitModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="submitModalLabel">CONFIRM DETAILS</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Proceed to submit details
+                                </div>
+                                <div class="modal-footer form-submit">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" name="submit" id="submit"
+                                        class="btn btn-primary" data-toggle="modal" data-target="#success_tic">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="success_tic" class="sucbody modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <a class="close" href="#" data-dismiss="modal">&times;</a>
+                <div class="page-body">
+                    <div class="head">
+                        <h3 style="margin-top:5px;">Submitted Successfully!</h3> 
+                    </div>
+
+                    <h1 style="text-align:center;">
+                        <div class="checkmark-circle">
+                            <div class="background"></div>
+                            <div class="checkmark draw"></div>
+                        </div>
+                        <h1>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8-beta.17/jquery.inputmask.min.js"
+        integrity="sha512-zdfH1XdRONkxXKLQxCI2Ak3c9wNymTiPh5cU4OsUavFDATDbUzLR+SYWWz0RkhDmBDT0gNSUe4xrQXx8D89JIQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="{% static 'reg/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'reg/js/main.js' %}"></script>
+    <script src="{% static 'hom/js/jquery.js' %}"></script>
+    <script src="{% static 'hom/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'hom/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'hom/js/ketchup.all.js' %}"></script>
+    <script src="{% static 'hom/js/fancybox.js' %}"></script>
+    <script src="{% static 'hom/js/script.js' %}"></script>
+
+</body>
+
+</html>

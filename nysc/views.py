@@ -8,7 +8,7 @@ from .forms import DatabaseForm, InecForm
 
 def home(request):
 
-  return render(request, 'nysc/index.html')
+  return render(request, 'index.html')
 
 
 def reg(request):
@@ -20,15 +20,15 @@ def reg(request):
     #   messages.success(request, Detail.name, "Registered successfully!")
   else:
       form = DatabaseForm()
-  return render(request, 'nysc/reg.html', {'form': form})
+  return render(request, 'reg.html', {'form': form})
 
 def reg(request):
   if request.method == "POST":
     form = InecForm(request.POST)
     if form.is_valid():
       form.save()
-      return redirect('home')
-    #   messages.success(request, Detail.name, "Registered successfully!")
+      messages.success(request, "Details saved successfully!")
+    return redirect('home')
   else:
       form = InecForm()
-  return render(request, 'nysc/reg.html', {'form': form})
+  return render(request, 'reg.html', {'form': form})
